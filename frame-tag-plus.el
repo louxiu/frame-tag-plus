@@ -34,7 +34,10 @@
       (progn
         (set-frame-name-another 
          (car frames) 
-         (concat frame-title-format "-" (aref num-jp (- seq 1))))
+         (concat (char-to-string (+ 96 seq)) 
+                 (char-to-string (+ 96 seq)) 
+                 (char-to-string (+ 96 seq))
+                 "-" frame-title-format "-" (aref num-jp (- seq 1))))
         (update-frame-nth (cdr frames) (- seq 1)))))
 
 ;; (frame-parameter (car (frame-list)) 'name)
